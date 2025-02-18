@@ -3,13 +3,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         final Scanner sc = new Scanner(System.in);
-        final int COUNT = 3;
         final int[] diceCountArr = new int[6];
         int prizes = -1;
         int biggestDiceIndex = 0;
 
-        for (int i = 0; i < COUNT; i++) {
-            final short num = sc.nextShort();
+        final String[] inputArr = sc.nextLine().split(" ");
+
+        for (int i = 0; i < inputArr.length; i++) {
+            final short num = Short.parseShort(inputArr[i]);
             final int index = num - 1;
             diceCountArr[index]++;
         }
